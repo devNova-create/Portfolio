@@ -255,3 +255,29 @@ if (contactForm) {
     });
   });
 }
+
+// About "Read More" Toggle
+const readMoreBtn = document.getElementById('read-more-btn');
+const aboutExtra = document.getElementById('about-extra');
+
+if (readMoreBtn && aboutExtra) {
+  readMoreBtn.addEventListener('click', () => {
+    const isExpanded = readMoreBtn.getAttribute('aria-expanded') === 'true';
+    readMoreBtn.setAttribute('aria-expanded', !isExpanded);
+    aboutExtra.classList.toggle('expanded');
+    
+    if (!isExpanded) {
+      readMoreBtn.innerHTML = 'Read Less <i class="fa-solid fa-chevron-up"></i>';
+    } else {
+      readMoreBtn.innerHTML = 'Read More <i class="fa-solid fa-chevron-down"></i>';
+      // Scroll back up to the about section smoothly if they collapse it
+      const aboutSection = document.getElementById('about');
+      if (aboutSection) {
+        window.scrollTo({
+          top: aboutSection.offsetTop - 80,
+          behavior: 'smooth'
+        });
+      }
+    }
+  });
+}

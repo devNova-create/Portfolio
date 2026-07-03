@@ -514,6 +514,17 @@ section hr {
   object-fit: cover;
 }
 
+.about-extra {
+  max-height: none;
+  opacity: 1;
+  overflow: visible;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease, margin-bottom 0.4s ease;
+}
+
+.read-more-btn {
+  display: none;
+}
+
 /* ==========================================
    PROJECTS SECTION
    ========================================== */
@@ -1187,6 +1198,59 @@ section hr {
 
   .tech-category-card {
     padding: 20px;
+  }
+
+  /* Mobile-specific text collapse & readability tweaks */
+  .about-extra {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    margin-bottom: 0;
+  }
+
+  .about-extra.expanded {
+    max-height: 500px;
+    opacity: 1;
+    margin-bottom: 16px;
+  }
+
+  .read-more-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: transparent;
+    border: 2px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 10px 22px;
+    border-radius: 12px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    margin: 10px auto 24px auto;
+    outline: none;
+  }
+
+  .read-more-btn:hover {
+    background-color: var(--accent-light);
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  /* Typography adjustments for readability and airiness on mobile */
+  .info-p p,
+  .about-info p,
+  .contact-info p {
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--text-secondary);
+  }
+
+  .project-card p,
+  .service-card p {
+    font-size: 13px;
+    line-height: 1.6;
   }
 }
 
