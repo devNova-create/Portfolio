@@ -1,5 +1,3 @@
-![Logo](cp.png)
-
 # Shubham Portfolio Showcase 💻
 
 Welcome to **Shubham's Portfolio Showcase**!  
